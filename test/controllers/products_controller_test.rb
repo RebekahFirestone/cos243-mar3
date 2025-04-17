@@ -2,7 +2,7 @@ require "test_helper"
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @product = products(:one)
+    @product = Product.new(description: "fjdksla;fjdksal;fjkdsla;fjkdsafjkdlsajfkdsjfklds;ajfkdlsajfkld;sajfkldsajkfl;dsjaklf;jdskla;jfkdlsa;jfkdlsajfkdljakl", title: "fjdksla;fjdksal", image_url: "lorem.jpg", price: "15")
     @title = "The Great Book #{rand(1000)}"
 
   end
@@ -27,7 +27,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
           description: @product.description, 
           image_url: @product.image_url, 
           price: @product.price, 
-          title: @title,
+          title: @title
         }
       }
     
